@@ -5,50 +5,51 @@ import { CtaBand } from "@/components/cta-band";
 import { SectionHeading } from "@/components/section-heading";
 
 const audiences = [
-  ["Athletes", "Know exactly what to do before school, after practice, on the weekend, or while traveling. No more guessing from old notes."],
-  ["Parents", "See the plan, understand the purpose, and support safe consistency without having to become the strength coach."],
-  ["Coaches", "Give athletes a standard for work outside practice and keep buy-in visible across the room, roster, or off-season group."],
-  ["Teams", "Keep wrestling programs, school groups, clubs, and training partners on the same page with shared structure."],
-  ["Adults", "Follow a realistic plan with clear sessions, simple tracking, and accountability that survives a busy week."],
+  ["Athletes", "Open the app and know the work: lift, condition, recover, and check in. No screenshots or old notes."],
+  ["Parents", "See what the plan asks for, why it matters, and how consistently it is getting done."],
+  ["Coaches", "Set the standard outside practice and see who is staying with the program."],
+  ["Teams", "Keep rooms, rosters, clubs, and training groups working from the same weekly plan."],
+  ["Adults", "Follow strength, conditioning, and mobility work that fits a real week."],
 ];
 
 const realWorldTools = [
-  ["01", "Simple plan delivery", "Athletes open Gym DTC and see the session in order: warm-up, main work, conditioning, mobility, and check-in."],
-  ["02", "Guided workouts", "Exercise cues and session notes keep training clear when a coach, parent, or partner is not standing there."],
-  ["03", "Accountability", "Completion signals make follow-through visible without turning training into another complicated system."],
-  ["04", "Progress tracking", "Workout history shows effort, missed days, streaks, and the steady work that usually gets overlooked."],
-  ["05", "Team structure", "Groups can be organized by room, roster, season, age level, training focus, or family plan."],
-  ["06", "Mobile-first access", "Built for the gym floor, school hallway, garage setup, tournament hotel, and the ride home."],
+  ["01", "Plan delivery", "Sessions stay in order: warm-up, main work, conditioning, mobility, and check-in."],
+  ["02", "Workout guidance", "Cues and notes keep the work clear when a coach or training partner is not there."],
+  ["03", "Accountability", "Completion signals show who followed through and where the week slipped."],
+  ["04", "Progress tracking", "Workout history captures sessions, missed days, streaks, and consistency over time."],
+  ["05", "Team structure", "Organize groups by room, roster, season, age level, or training focus."],
+  ["06", "Mobile-first access", "Built for the weight room, wrestling room, garage, tournament hotel, and ride home."],
 ];
 
-const whyCards = [
-  ["Why athletes stick with it", "The next session is clear. The standard is visible. Progress feels earned instead of random."],
-  ["Why coaches trust it", "Gym DTC supports the program outside practice without replacing the coach or adding more spreadsheets."],
-  ["Why families need it", "Parents get direction, athletes get routine, and training stops becoming a nightly argument."],
+const trustCards = [
+  ["Clear weekly structure", "Athletes know what to do, when to do it, and how each session fits the week."],
+  ["Coach accountability", "Coaches can assign the work, set expectations, and see follow-through without chasing texts."],
+  ["Family clarity", "Parents get a simple view of the plan, so support feels informed instead of improvised."],
+  ["Progress you can track", "Completed sessions and training history make consistency visible over time."],
 ];
 
 const comparison = [
-  ["Random workouts", "Different exercises every week, no progression, and no clear reason behind the session."],
-  ["Scattered notes", "Screenshots, group texts, notebooks, and memory all fighting to be the training plan."],
-  ["Inconsistent training", "Athletes want to work, but the routine breaks down when life gets busy."],
-  ["Gym DTC", "One plan, guided sessions, visible accountability, and a record of the work that was actually done."],
+  ["Random workouts", "New exercises every week with no clear progression."],
+  ["Scattered notes", "Screenshots, group texts, notebooks, and memory competing with the plan."],
+  ["Inconsistent training", "Good intentions break down when the week gets crowded."],
+  ["Gym DTC", "One plan, guided sessions, visible accountability, and a record of the work."],
 ];
 
 const steps = [
-  ["Pick the plan", "Choose a training focus for an athlete, adult, team, or group."],
-  ["Open today’s work", "See the full session with order, cues, and expectations."],
-  ["Train and check off", "Complete the workout and log what happened."],
-  ["Review progress", "Use consistency and history to keep the next week honest."],
+  ["Set the plan", "Choose a training focus for an athlete, adult, team, or group."],
+  ["Open today’s work", "See the session order, cues, and expectations."],
+  ["Train and check in", "Complete the workout and log what happened."],
+  ["Review progress", "Use history and consistency to guide the next week."],
 ];
 
 const socialProof = [
-  ["Coach feedback", "\u201cWe need one place athletes can check without asking what to do next.\u201d", "Wrestling program placeholder"],
-  ["Parent feedback", "\u201cI want to support the work, but I need to understand the plan first.\u201d", "Family waitlist placeholder"],
-  ["Athlete feedback", "\u201cIt is easier to train when the workout is already written and I can see progress.\u201d", "Early athlete placeholder"],
+  ["Coach note", "\u201cWe need one place athletes can check without asking what to do next.\u201d", "Early team conversation"],
+  ["Parent note", "\u201cI want to support the work, but I need to understand the plan first.\u201d", "Family waitlist conversation"],
+  ["Athlete note", "\u201cIt is easier to train when the workout is already written and I can see progress.\u201d", "Early athlete conversation"],
 ];
 
 const faqs = [
-  ["What does Gym DTC actually do?", "Gym DTC gives athletes, families, coaches, teams, and adults a structured place to follow training plans, view guided workouts, track completion, and stay accountable outside practice."],
+  ["What does Gym DTC actually do?", "Gym DTC gives athletes, families, coaches, teams, and adults one place to follow training plans, view guided workouts, track completion, and stay accountable outside practice."],
   ["Is Gym DTC only for wrestling?", "No. Wrestling programs are a major focus because they need discipline, strength, conditioning, and accountability. The same structure also fits other athletes, schools, teams, families, and adults."],
   ["Can a coach use this with a full team?", "That is one of the main use cases. Gym DTC is being built for groups, team plans, training assignments, and simple accountability between practices and seasons."],
   ["How does this help parents?", "Parents can see that training has structure and purpose. They do not need to write workouts or police every detail; they can support consistency with more confidence and less confusion."],
@@ -70,7 +71,7 @@ export default function Home() {
                 Training that actually gives athletes structure.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300 sm:text-xl">
-                Gym DTC helps athletes, parents, coaches, wrestling programs, and adults follow a real plan outside practice with guided workouts, accountability, and progress tracking in one mobile-first place.
+                Gym DTC gives athletes, families, coaches, and teams a clear plan to follow outside practice with guided workouts, built-in accountability, and progress you can actually track.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <ButtonLink href="/contact">Join the Waitlist</ButtonLink>
@@ -81,7 +82,7 @@ export default function Home() {
               <div className="border-b border-white/10 p-6">
                 <p className="text-xs font-black uppercase tracking-[0.25em] text-zinc-400">Today&apos;s Training</p>
                 <h2 className="mt-3 text-2xl font-black text-white">Power + Conditioning</h2>
-                <p className="mt-2 text-sm leading-6 text-zinc-400">Session assigned to Varsity Group A. Built for work after practice.</p>
+                <p className="mt-2 text-sm leading-6 text-zinc-400">Assigned to Varsity Group A for focused after-practice work.</p>
               </div>
               <div className="space-y-4 p-6">
                 {["Warm-up mobility", "Strength block", "Sprint intervals", "Recovery check-in"].map((item, index) => (
@@ -106,7 +107,7 @@ export default function Home() {
 
       <section className="py-16 sm:py-24">
         <Container>
-          <SectionHeading eyebrow="Who Gym DTC is for" title="One training plan the whole support system can understand." description="Gym DTC is for real weeks: school, practice, tournaments, family schedules, work shifts, and the days when motivation is not enough." />
+          <SectionHeading eyebrow="Who it serves" title="A clearer plan for every person around the athlete." description="Training works better when athletes, families, and coaches can see the same plan." />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {audiences.map(([title, body]) => (
               <Card key={title}>
@@ -118,23 +119,23 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-white/[0.03] py-16 sm:py-24">
+      <section className="bg-white/[0.03] py-14 sm:py-20">
         <Container>
-          <SectionHeading align="center" eyebrow="Why Gym DTC" title="Structure beats hype when the week gets hard." description="The problem is rarely effort. The problem is unclear work, missed follow-through, and no shared view of progress. Gym DTC turns training into a routine people can repeat." />
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {whyCards.map(([title, body]) => (
+          <SectionHeading align="center" eyebrow="Why it works" title="Built around the way training really happens." description="Gym DTC keeps the week clear for athletes, visible for coaches, and understandable for families." />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {trustCards.map(([title, body]) => (
               <Card key={title}>
-                <h3 className="text-2xl font-black text-white">{title}</h3>
-                <p className="mt-4 leading-8 text-zinc-400">{body}</p>
+                <h3 className="text-xl font-black text-white">{title}</h3>
+                <p className="mt-3 leading-7 text-zinc-400">{body}</p>
               </Card>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="py-16 sm:py-24">
+      <section className="py-14 sm:py-20">
         <Container>
-          <SectionHeading eyebrow="Built for real-world use" title="The tools that keep training moving." description="Gym DTC keeps the experience practical: open the plan, do the work, log the session, and stay connected to the people who care about the progress." />
+          <SectionHeading eyebrow="Inside the plan" title="Everything athletes need to train without guessing." description="Open the plan, do the work, log the session, and keep the next step clear." />
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {realWorldTools.map(([num, title, body]) => (
               <Card key={title}>
@@ -147,15 +148,15 @@ export default function Home() {
         </Container>
       </section>
 
-      <section className="bg-gradient-to-br from-white/[0.06] to-transparent py-16 sm:py-24">
+      <section className="bg-gradient-to-br from-white/[0.06] to-transparent py-14 sm:py-20">
         <Container className="grid gap-8 lg:grid-cols-2 lg:items-center">
           <Card>
             <p className="text-4xl font-black text-volt sm:text-5xl">Built for teams.</p>
             <p className="mt-3 text-4xl font-black text-white sm:text-5xl">Simple for families.</p>
-            <p className="mt-6 leading-8 text-zinc-300">Coaches need standards. Parents need clarity. Athletes need the next step. Gym DTC connects those needs without making training feel like office software.</p>
+            <p className="mt-6 leading-8 text-zinc-300">Coaches need standards. Parents need clarity. Athletes need the next step. Gym DTC keeps those needs connected without adding noise.</p>
           </Card>
           <div className="space-y-4">
-            {["Assign plans to groups without another messy spreadsheet.", "Help athletes train on their own with the same expectations.", "Give families a clear view of what the work is supposed to be."].map((item) => (
+            {["Assign plans to groups without another messy spreadsheet.", "Help athletes train on their own with clear expectations.", "Give families a clear view of the work and the purpose."].map((item) => (
               <div key={item} className="rounded-2xl border border-white/10 bg-black/30 p-5 font-bold text-white">{item}</div>
             ))}
           </div>
@@ -164,7 +165,7 @@ export default function Home() {
 
       <section className="py-16 sm:py-24">
         <Container>
-          <SectionHeading align="center" eyebrow="Better than scattered training" title="Stop building progress from screenshots and guesswork." description="A workout plan should not live across a group text, a notebook, a memory, and a random video folder. Gym DTC gives the work a home." />
+          <SectionHeading align="center" eyebrow="No more scattered training" title="Stop building progress from screenshots and guesswork." description="The plan should not live in a group text, a notebook, and memory. Gym DTC gives the work one home." />
           <div className="mt-12 grid gap-4 md:grid-cols-4">
             {comparison.map(([title, body]) => (
               <Card key={title} className={title === "Gym DTC" ? "border-volt/40 bg-volt/10" : ""}>
@@ -178,7 +179,7 @@ export default function Home() {
 
       <section className="bg-white/[0.03] py-16 sm:py-24">
         <Container>
-          <SectionHeading align="center" eyebrow="How Gym DTC works" title="Simple enough to use daily. Strong enough for serious training." />
+          <SectionHeading align="center" eyebrow="How it works" title="Four steps athletes can repeat every week." />
           <div className="mt-12 grid gap-4 md:grid-cols-4">
             {steps.map(([step, body], index) => (
               <Card key={step}>
@@ -193,7 +194,7 @@ export default function Home() {
 
       <section className="py-16 sm:py-24">
         <Container className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <SectionHeading eyebrow="Coming soon on mobile" title="Training access for the places athletes actually train." description="Gym DTC is preparing mobile app links and launch updates. The goal is fast access from the weight room, wrestling room, garage, hotel, or sideline." />
+          <SectionHeading eyebrow="Coming soon on mobile" title="Training access where the work happens." description="Launch updates, pilot details, and app links will be shared as the mobile release gets closer." />
           <Card>
             <div className="grid gap-4 sm:grid-cols-2">
               {["App Store links coming soon", "Google Play links coming soon", "Early team pilots", "Launch updates by email"].map((item) => (
@@ -206,7 +207,7 @@ export default function Home() {
 
       <section className="bg-white/[0.03] py-16 sm:py-24">
         <Container>
-          <SectionHeading eyebrow="Early proof" title="Placeholder proof, ready for real coaches, parents, and athletes." description="These cards are intentionally formatted for launch feedback, pilot program notes, and future testimonials as Gym DTC rolls out." />
+          <SectionHeading eyebrow="Early signals" title="Built from real training problems." description="The first waitlist conversations are focused on clear plans, fewer reminders, and better follow-through." />
           <div className="mt-10 grid gap-4 md:grid-cols-3">
             {socialProof.map(([label, quote, source]) => (
               <Card key={label}>
