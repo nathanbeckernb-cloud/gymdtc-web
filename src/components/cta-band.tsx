@@ -17,8 +17,8 @@ export function CtaBand() {
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-              <ButtonLink href="/contact">Join the Waitlist</ButtonLink>
-              <ButtonLink href="/contact" variant="secondary">Talk to Us</ButtonLink>
+              <ButtonLink href="/contact#waitlist">Join the Waitlist</ButtonLink>
+              <ButtonLink href="/contact#team-pilots" variant="secondary">Talk to Us</ButtonLink>
             </div>
           </div>
         </div>

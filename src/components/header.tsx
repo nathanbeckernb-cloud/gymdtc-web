@@ -17,7 +17,7 @@ export function Header() {
           ))}
         </nav>
         <div className="hidden sm:block">
-          <ButtonLink href="/contact">Get Launch Updates</ButtonLink>
+          <ButtonLink href="/contact#waitlist">Get Launch Updates</ButtonLink>
         </div>
       </Container>
       <Container className="flex gap-4 overflow-x-auto border-t border-white/10 py-3 md:hidden" >

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ButtonLink } from "@/components/button-link";
 import { Card, IconBadge } from "@/components/card";
 import { Container } from "@/components/container";
 import { CtaBand } from "@/components/cta-band";
@@ -117,12 +118,16 @@ export default function FeaturesPage() {
       </section>
       <section className="bg-white/[0.03] py-16 sm:py-24">
         <Container className="grid gap-8 lg:grid-cols-2 lg:items-center">
-          <SectionHeading eyebrow="Built mobile-first" title="Training should not need a desktop, a printer, or a group text to make sense." description="Gym DTC is preparing a focused mobile experience so athletes can open the plan, complete the work, and stay accountable wherever they train." />
+          <SectionHeading eyebrow="Coming soon on mobile" title="Training should not need a desktop, a printer, or a group text to make sense." description="Gym DTC is preparing a focused mobile experience so athletes can open the plan, complete the work, and stay accountable wherever they train." />
           <Card>
             <div className="grid gap-4 sm:grid-cols-2">
               {mobileItems.map((item) => (
                 <div key={item} className="rounded-2xl border border-white/10 bg-black/30 p-4 font-bold text-white">{item}</div>
               ))}
+            </div>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href="/contact#waitlist">Get Launch Updates</ButtonLink>
+              <ButtonLink href="/contact#team-pilots" variant="secondary">Discuss a Pilot</ButtonLink>
             </div>
           </Card>
         </Container>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ButtonLink } from "@/components/button-link";
 import { Card } from "@/components/card";
 import { Container } from "@/components/container";
 import { CtaBand } from "@/components/cta-band";
@@ -14,6 +15,13 @@ const beliefs = [
   "Athletes improve when effort, standards, and accountability are visible.",
   "Coaches need tools that extend the program without replacing the coach.",
   "Parents deserve confidence that work outside practice has direction.",
+];
+
+
+const launchStandards = [
+  ["Useful before it is broad", "Gym DTC is collecting early interest from the people most likely to need structured training support first."],
+  ["Coach-friendly by design", "The product is meant to extend a program's standards outside practice, not create another system coaches have to fight."],
+  ["Clear family communication", "Launch updates will keep parents and guardians informed without asking them to become strength coaches."],
 ];
 
 const habits = [
@@ -63,6 +71,27 @@ export default function AboutPage() {
           </div>
         </Container>
       </section>
+
+      <section className="bg-white/[0.03] py-16 sm:py-24">
+        <Container className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <div>
+            <SectionHeading eyebrow="Launch approach" title="Built carefully, with the right early users." description="Trust starts before the app launches. Gym DTC is using the waitlist to understand who needs team pilots, who wants family updates, and who is waiting for mobile access." />
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href="/contact#waitlist">Join the Waitlist</ButtonLink>
+              <ButtonLink href="/contact#team-pilots" variant="secondary">Discuss a Pilot</ButtonLink>
+            </div>
+          </div>
+          <div className="grid gap-4">
+            {launchStandards.map(([title, body]) => (
+              <Card key={title}>
+                <h3 className="text-xl font-black text-white">{title}</h3>
+                <p className="mt-3 leading-7 text-zinc-400">{body}</p>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <section className="py-16 sm:py-24">
         <Container>
           <SectionHeading eyebrow="What guides us" title="Premium standards. Practical execution." />

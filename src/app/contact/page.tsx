@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import { ButtonLink } from "@/components/button-link";
 import { Card } from "@/components/card";
 import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
+import { WaitlistForm } from "@/components/waitlist-form";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -10,78 +12,101 @@ export const metadata: Metadata = {
 };
 
 const paths = [
-  ["Coaches and schools", "Ask about team pilots, program setup, wrestling-room accountability, and launch conversations for your athletes."],
-  ["Parents", "Get updates on safe structure, family-friendly clarity, and plans that help athletes train outside practice."],
+  ["Coaches and schools", "Ask about team pilots, roster setup, training expectations, and accountability between practices."],
+  ["Parents", "Get launch updates for structured plans, family-friendly clarity, and safer support outside practice."],
   ["Athletes", "Join early interest for guided workouts, progress tracking, and a plan you can follow without guessing."],
-  ["Early app interest", "Mobile app links, launch updates, and pilot details are coming soon for waitlist members."],
+  ["Mobile app interest", "Be notified when App Store and Google Play launch details are ready."],
+];
+
+const followUpSteps = [
+  ["1", "Join the waitlist", "Send your role, email, and the kind of training support you want."],
+  ["2", "We sort the request", "Coach, school, family, athlete, adult, and mobile launch interest go to the right follow-up path."],
+  ["3", "Launch updates follow", "You will hear about pilot conversations, mobile availability, and next steps as Gym DTC gets closer to release."],
+];
+
+const trustPoints = [
+  "No spammy coaching funnels.",
+  "No public athlete information requested in this form.",
+  "Team and school conversations are handled separately from general app updates.",
 ];
 
 export default function ContactPage() {
   return (
-    <section className="bg-radial-volt py-20 sm:py-28">
-      <Container className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <div>
-          <SectionHeading eyebrow="Contact Gym DTC" title="Join the waitlist or start a real training conversation." description="Tell us who you are, what you are trying to build, and whether you are looking for athlete structure, family clarity, team accountability, or early mobile app updates." />
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+    <>
+      <section className="bg-radial-volt py-20 sm:py-28">
+        <Container className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <SectionHeading eyebrow="Contact Gym DTC" title="Join the waitlist or start a real training conversation." description="Tell us who you are, what you are trying to build, and whether you need athlete structure, family clarity, team accountability, or mobile app launch updates." />
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href="#waitlist">Join the Waitlist</ButtonLink>
+              <ButtonLink href="mailto:hello@gymdtc.com" variant="secondary">Email Gym DTC</ButtonLink>
+            </div>
+            <p className="mt-6 text-sm text-zinc-400">Prefer direct email? Reach us at <a className="font-bold text-volt" href={`mailto:${site.email}`}>{site.email}</a>.</p>
+          </div>
+          <Card className="p-6 sm:p-8">
+            <div className="mb-6">
+              <p className="text-sm font-black uppercase tracking-[0.24em] text-volt">Waitlist form</p>
+              <h2 className="mt-3 text-2xl font-black text-white">Tell us where Gym DTC fits.</h2>
+              <p className="mt-3 leading-7 text-zinc-400">A few details help us send useful launch updates and follow up on serious team or school interest.</p>
+            </div>
+            <WaitlistForm />
+          </Card>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <Container>
+          <SectionHeading eyebrow="Contact paths" title="Choose the lane that fits your goal." description="Gym DTC is collecting focused interest now so launch updates and pilot conversations are useful instead of generic." />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {paths.map(([title, body]) => (
               <Card key={title}>
                 <h2 className="text-xl font-black text-white">{title}</h2>
-                <p className="mt-2 leading-7 text-zinc-400">{body}</p>
+                <p className="mt-3 leading-7 text-zinc-400">{body}</p>
               </Card>
             ))}
           </div>
-          <div className="mt-8 rounded-3xl border border-volt/25 bg-volt/10 p-5">
-            <p className="text-sm font-bold leading-7 text-zinc-200">
-              Coming soon: App Store and Google Play links, launch updates, and pilot program details for coaches, schools, families, athletes, and adults.
-            </p>
+        </Container>
+      </section>
+
+      <section id="team-pilots" className="bg-white/[0.03] py-16 sm:py-24 scroll-mt-28">
+        <Container className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <SectionHeading eyebrow="What happens next" title="A clearer follow-up process for early interest." description="The goal is simple: learn who needs Gym DTC first, keep launch communication useful, and make team pilot conversations easier to start." />
+          <div className="grid gap-4">
+            {followUpSteps.map(([step, title, body]) => (
+              <Card key={title} className="flex gap-4">
+                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-volt text-lg font-black text-obsidian">{step}</div>
+                <div>
+                  <h3 className="text-xl font-black text-white">{title}</h3>
+                  <p className="mt-2 leading-7 text-zinc-400">{body}</p>
+                </div>
+              </Card>
+            ))}
           </div>
-          <p className="mt-6 text-sm text-zinc-400">Prefer email? Reach us at <a className="font-bold text-volt" href={`mailto:${site.email}`}>{site.email}</a>.</p>
-        </div>
-        <Card className="p-6 sm:p-8">
-          <div className="mb-6">
-            <p className="text-sm font-black uppercase tracking-[0.24em] text-volt">Waitlist form</p>
-            <h2 className="mt-3 text-2xl font-black text-white">Tell us where Gym DTC fits.</h2>
-            <p className="mt-3 leading-7 text-zinc-400">A few details help us send the right launch updates and follow up on team or school interest.</p>
-          </div>
-          <form className="space-y-6" aria-label="Gym DTC contact form">
-            <div className="grid gap-5 sm:grid-cols-2">
-              <label className="block">
-                <span className="text-sm font-bold text-white">Full name</span>
-                <input name="name" type="text" placeholder="Your name" className="mt-2 w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none ring-volt/50 transition placeholder:text-zinc-600 focus:border-volt focus:ring-4" />
-              </label>
-              <label className="block">
-                <span className="text-sm font-bold text-white">Email address</span>
-                <input name="email" type="email" placeholder="you@example.com" className="mt-2 w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none ring-volt/50 transition placeholder:text-zinc-600 focus:border-volt focus:ring-4" />
-              </label>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <Container className="grid gap-8 lg:grid-cols-2 lg:items-center">
+          <Card>
+            <p className="text-sm font-black uppercase tracking-[0.28em] text-volt">Coming soon on mobile</p>
+            <h2 className="mt-4 text-3xl font-black text-white">App launch updates are part of the waitlist.</h2>
+            <p className="mt-5 leading-8 text-zinc-300">Gym DTC is preparing mobile access for the places training actually happens: weight rooms, wrestling rooms, garages, hotels, and busy school nights.</p>
+            <div className="mt-6 flex flex-wrap gap-3 text-sm font-bold text-white">
+              {['App Store coming soon', 'Google Play coming soon', 'Pilot details by email'].map((item) => (
+                <span key={item} className="rounded-full border border-white/10 bg-black/30 px-4 py-2">{item}</span>
+              ))}
             </div>
-            <div className="grid gap-5 sm:grid-cols-2">
-              <label className="block">
-                <span className="text-sm font-bold text-white">Phone</span>
-                <input name="phone" type="tel" placeholder="Optional" className="mt-2 w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none ring-volt/50 transition placeholder:text-zinc-600 focus:border-volt focus:ring-4" />
-              </label>
-              <label className="block">
-                <span className="text-sm font-bold text-white">I am a</span>
-                <select name="role" defaultValue="" className="mt-2 w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none ring-volt/50 transition focus:border-volt focus:ring-4">
-                  <option value="" disabled>Choose one</option>
-                  <option>Coach or school leader</option>
-                  <option>Parent or guardian</option>
-                  <option>Athlete</option>
-                  <option>Adult training for myself</option>
-                  <option>Interested in app updates</option>
-                </select>
-              </label>
-            </div>
-            <label className="block">
-              <span className="text-sm font-bold text-white">What are you looking for?</span>
-              <textarea name="message" rows={6} placeholder="Example: I coach a middle school wrestling team and want off-season accountability. Or: I am a parent looking for safe structure outside practice." className="mt-2 w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-white outline-none ring-volt/50 transition placeholder:text-zinc-600 focus:border-volt focus:ring-4" />
-            </label>
-            <button type="button" className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-volt bg-volt px-6 py-3 text-sm font-black uppercase tracking-[0.18em] text-obsidian shadow-glow transition hover:border-white hover:bg-white sm:w-auto">
-              Get Launch Updates
-            </button>
-            <p className="text-xs leading-6 text-zinc-500">Form UI only for now. Backend submission will be connected in a future release.</p>
-          </form>
-        </Card>
-      </Container>
-    </section>
+          </Card>
+          <Card>
+            <p className="text-sm font-black uppercase tracking-[0.28em] text-volt">Trust notes</p>
+            <ul className="mt-5 space-y-4">
+              {trustPoints.map((point) => (
+                <li key={point} className="rounded-2xl border border-white/10 bg-black/30 p-4 font-bold text-white">{point}</li>
+              ))}
+            </ul>
+          </Card>
+        </Container>
+      </section>
+    </>
   );
 }
