@@ -39,7 +39,7 @@ export default function ContactPage() {
             <SectionHeading eyebrow="Contact Gym DTC" title="Join the waitlist or start a real training conversation." description="Tell us who you are, what you are trying to build, and whether you need athlete structure, family clarity, team accountability, or mobile app launch updates." />
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="#waitlist">Join the Waitlist</ButtonLink>
-              <ButtonLink href="mailto:hello@gymdtc.com" variant="secondary">Email Gym DTC</ButtonLink>
+              <ButtonLink href="#team-pilots" variant="secondary">Discuss a Team Pilot</ButtonLink>
             </div>
             <p className="mt-6 text-sm text-zinc-400">Prefer direct email? Reach us at <a className="font-bold text-volt" href={`mailto:${site.email}`}>{site.email}</a>.</p>
           </div>
@@ -69,19 +69,29 @@ export default function ContactPage() {
       </section>
 
       <section id="team-pilots" className="bg-white/[0.03] py-16 sm:py-24 scroll-mt-28">
-        <Container className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <SectionHeading eyebrow="What happens next" title="A clearer follow-up process for early interest." description="The goal is simple: learn who needs Gym DTC first, keep launch communication useful, and make team pilot conversations easier to start." />
-          <div className="grid gap-4">
-            {followUpSteps.map(([step, title, body]) => (
-              <Card key={title} className="flex gap-4">
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-volt text-lg font-black text-obsidian">{step}</div>
-                <div>
-                  <h3 className="text-xl font-black text-white">{title}</h3>
-                  <p className="mt-2 leading-7 text-zinc-400">{body}</p>
-                </div>
-              </Card>
-            ))}
+        <Container className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <SectionHeading eyebrow="Team pilots" title="Start a focused team or school pilot conversation." description="Share the same details as the waitlist, with team or school pilot selected as the primary interest so the request reaches the right follow-up path." />
+            <div className="mt-8 grid gap-4">
+              {followUpSteps.map(([step, title, body]) => (
+                <Card key={title} className="flex gap-4">
+                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-volt text-lg font-black text-obsidian">{step}</div>
+                  <div>
+                    <h3 className="text-xl font-black text-white">{title}</h3>
+                    <p className="mt-2 leading-7 text-zinc-400">{body}</p>
+                  </div>
+                </Card>
+              ))}
+            </div>
           </div>
+          <Card className="p-6 sm:p-8">
+            <div className="mb-6">
+              <p className="text-sm font-black uppercase tracking-[0.24em] text-volt">Team pilot form</p>
+              <h2 className="mt-3 text-2xl font-black text-white">Tell us about the team need.</h2>
+              <p className="mt-3 leading-7 text-zinc-400">This uses the same professional intake fields and routes coach or school pilot interest to Gym DTC without opening an email client.</p>
+            </div>
+            <WaitlistForm id="team-pilot-form" formType="team-pilot" submitLabel="Request Pilot Follow-Up" defaultInterest="Team or school pilot" note="Your pilot request submits securely to Gym DTC for a direct, practical follow-up." />
+          </Card>
         </Container>
       </section>
 

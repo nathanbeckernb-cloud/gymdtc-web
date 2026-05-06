@@ -9,7 +9,7 @@ Premium marketing site for **Gym DTC**, a mobile-first training platform for ath
 - App Router pages for Home, About, Features, and Contact
 - Reusable layout, card, heading, CTA, logo, header, and footer components
 - Placeholder social proof cards prepared for pilot feedback, coach quotes, family notes, and athlete testimonials
-- Contact form UI prepared for future backend integration
+- Waitlist and team pilot forms post to a Vercel-ready contact API route
 - Mobile app links intentionally represented as coming soon
 
 ## Getting started
@@ -49,5 +49,5 @@ src/lib/          Shared site metadata and navigation
 ## Launch notes
 
 - Replace social proof placeholders with real pilot quotes, school/program names, or launch metrics when approved.
-- Connect the contact form to a backend or waitlist provider before public launch.
+- Set `FORMSPREE_ENDPOINT` or `CONTACT_FORM_ENDPOINT` in Vercel to forward waitlist and team pilot submissions to Formspree or another secure intake webhook.
 - Add App Store and Google Play links when mobile app pages are available.
