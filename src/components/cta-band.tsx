@@ -10,15 +10,15 @@ export function CtaBand() {
             <div>
               <p className="text-sm font-black uppercase tracking-[0.28em] text-volt">Early access</p>
               <h2 className="mt-4 text-balance text-3xl font-black tracking-tight text-white sm:text-5xl">
-                Bring structure to the training days that happen outside practice.
+                Bring structure to the training days nobody should have to guess through.
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-200">
-                Join the Gym DTC waitlist for launch updates, coach pilots, team onboarding details, and future app links.
+                Join the Gym DTC waitlist for launch updates, coach pilots, team onboarding conversations, and future mobile app links.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
               <ButtonLink href="/contact">Join the Waitlist</ButtonLink>
-              <ButtonLink href="/features" variant="secondary">See Features</ButtonLink>
+              <ButtonLink href="/contact" variant="secondary">Talk to Us</ButtonLink>
             </div>
           </div>
         </div>

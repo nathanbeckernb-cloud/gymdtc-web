@@ -10,7 +10,7 @@ export function Footer() {
         <div>
           <Logo />
           <p className="mt-5 max-w-md text-sm leading-7 text-zinc-400">
-            Structured fitness plans for athletes, teams, families, and adults who want training they can actually follow.
+            Structured training plans for athletes, teams, families, wrestling programs, and adults who want clear work, accountability, and progress they can see.
           </p>
         </div>
         <div>
@@ -28,7 +28,7 @@ export function Footer() {
           <ul className="mt-4 space-y-3 text-sm text-zinc-400">
             <li>{site.domain}</li>
             <li><a className="transition hover:text-volt" href={`mailto:${site.email}`}>{site.email}</a></li>
-            <li>App Store links coming soon.</li>
+            <li>Mobile app links coming soon.</li>
           </ul>
         </div>
       </Container>

@@ -1,14 +1,16 @@
 # Gym DTC Marketing Website
 
-Production-ready starter marketing site for **Gym DTC** built with Next.js 14, TypeScript, and Tailwind CSS.
+Premium marketing site for **Gym DTC**, a mobile-first training platform for athletes, wrestling programs, schools, teams, families, and adults who need structure, accountability, and progress tracking outside practice.
 
-## What is included
+## Site direction
 
+- Athletic, dark, sharp visual system with volt/lime accents
+- Direct copy focused on structure, consistency, coach trust, family clarity, and real-world training
 - App Router pages for Home, About, Features, and Contact
-- Mobile-first responsive design
-- Sticky header, footer, CTA sections, FAQ, and social-proof placeholders
-- Reusable components for layout, buttons, cards, logo, CTA band, and section headings
-- Contact form UI prepared for a future backend integration
+- Reusable layout, card, heading, CTA, logo, header, and footer components
+- Placeholder social proof cards prepared for pilot feedback, coach quotes, family notes, and athlete testimonials
+- Contact form UI prepared for future backend integration
+- Mobile app links intentionally represented as coming soon
 
 ## Getting started
 
@@ -44,8 +46,8 @@ src/components/   Reusable marketing components
 src/lib/          Shared site metadata and navigation
 ```
 
-## Notes
+## Launch notes
 
-- App Store and Google Play links are intentionally represented as coming soon.
-- The contact form is presentational only and does not submit data yet.
-- Social proof cards are placeholders for future pilot programs, testimonials, or launch metrics.
+- Replace social proof placeholders with real pilot quotes, school/program names, or launch metrics when approved.
+- Connect the contact form to a backend or waitlist provider before public launch.
+- Add App Store and Google Play links when mobile app pages are available.

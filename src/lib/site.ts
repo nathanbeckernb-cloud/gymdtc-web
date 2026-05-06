@@ -3,7 +3,7 @@ export const site = {
   domain: "gymdtc.com",
   email: "hello@gymdtc.com",
   description:
-    "Gym DTC gives athletes, families, teams, and everyday adults structured workout plans, accountability, and progress tracking in a mobile-first fitness platform.",
+    "Gym DTC helps athletes, families, coaches, teams, wrestling programs, and adults follow structured training plans with guided workouts, accountability, and progress tracking.",
 };
 
 export const navItems = [
