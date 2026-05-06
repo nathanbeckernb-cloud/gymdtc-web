@@ -42,6 +42,13 @@ const steps = [
   ["Review progress", "Use history and consistency to guide the next week."],
 ];
 
+
+const launchTrust = [
+  ["Focused waitlist", "Early interest is organized by coaches, parents, athletes, adults, and mobile launch updates so follow-up is relevant."],
+  ["Pilot-minded rollout", "Team and school conversations can start before broad release, with setup needs handled directly."],
+  ["Clear expectations", "Gym DTC is built to support training standards, not replace coaches, parents, or good judgment."],
+];
+
 const socialProof = [
   ["Coach note", "\u201cWe need one place athletes can check without asking what to do next.\u201d", "Early team conversation"],
   ["Parent note", "\u201cI want to support the work, but I need to understand the plan first.\u201d", "Family waitlist conversation"],
@@ -74,8 +81,8 @@ export default function Home() {
                 Gym DTC gives athletes, families, coaches, and teams a clear plan to follow outside practice with guided workouts, built-in accountability, and progress you can actually track.
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-                <ButtonLink href="/contact">Join the Waitlist</ButtonLink>
-                <ButtonLink href="/contact" variant="secondary">Bring Gym DTC to Your Team</ButtonLink>
+                <ButtonLink href="/contact#waitlist">Join the Waitlist</ButtonLink>
+                <ButtonLink href="/contact#team-pilots" variant="secondary">Bring Gym DTC to Your Team</ButtonLink>
               </div>
             </div>
             <Card className="relative overflow-hidden p-0">
@@ -124,6 +131,21 @@ export default function Home() {
           <SectionHeading align="center" eyebrow="Why it works" title="Built around the way training really happens." description="Gym DTC keeps the week clear for athletes, visible for coaches, and understandable for families." />
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {trustCards.map(([title, body]) => (
+              <Card key={title}>
+                <h3 className="text-xl font-black text-white">{title}</h3>
+                <p className="mt-3 leading-7 text-zinc-400">{body}</p>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+
+      <section className="py-16 sm:py-24">
+        <Container className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <SectionHeading eyebrow="Launch-ready trust" title="Built to earn buy-in before the first workout starts." description="A training app has to feel clear to athletes, credible to coaches, and safe for families. Gym DTC keeps the early rollout focused on useful communication and practical follow-through." />
+          <div className="grid gap-4">
+            {launchTrust.map(([title, body]) => (
               <Card key={title}>
                 <h3 className="text-xl font-black text-white">{title}</h3>
                 <p className="mt-3 leading-7 text-zinc-400">{body}</p>
