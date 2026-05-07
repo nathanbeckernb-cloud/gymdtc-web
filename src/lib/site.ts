@@ -14,5 +14,6 @@ export const navItems = [
 ];
 
 export const legalItems = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms of Use", href: "/terms-of-use" },
 ];
