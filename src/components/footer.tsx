@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { navItems, site } from "@/lib/site";
+import { footerLinks, navItems, site } from "@/lib/site";
 import { Container } from "./container";
 import { Logo } from "./logo";
 
@@ -16,7 +16,7 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-black uppercase tracking-[0.22em] text-white">Site</h3>
           <ul className="mt-4 space-y-3 text-sm text-zinc-400">
-            {navItems.map((item) => (
+            {[...navItems, ...footerLinks].map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="transition hover:text-volt">{item.label}</Link>
               </li>
