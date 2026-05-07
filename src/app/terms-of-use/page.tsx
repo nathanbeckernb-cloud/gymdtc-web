@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Card } from "@/components/card";
 import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
@@ -91,11 +92,11 @@ export default function TermsOfUsePage() {
               <h2 className="mt-3 text-2xl font-black text-white">Questions about these Terms of Use?</h2>
               <p className="mt-3 leading-8 text-zinc-300">
                 If you have questions about these Terms of Use, contact GYM DTC at{" "}
-                <a className="font-bold text-white underline decoration-volt/60 underline-offset-4 transition hover:text-volt" href="mailto:info@gymdtc.com">
-                  info@gymdtc.com
+                <a className="font-bold text-white underline decoration-volt/60 underline-offset-4 transition hover:text-volt" href={`mailto:${site.email}`}>
+                  {site.email}
                 </a>{" "}
                 or visit{" "}
-                <a className="font-bold text-white underline decoration-volt/60 underline-offset-4 transition hover:text-volt" href="https://www.gymdtc.com/">
+                <a className="font-bold text-white underline decoration-volt/60 underline-offset-4 transition hover:text-volt" href={`https://www.${site.domain}/`}>
                   https://www.gymdtc.com/
                 </a>
                 .

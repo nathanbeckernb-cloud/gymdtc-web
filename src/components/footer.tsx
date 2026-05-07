@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { legalItems, navItems, site } from "@/lib/site";
+import { footerLinks, navItems, site } from "@/lib/site";
 import { Container } from "./container";
 import { Logo } from "./logo";
 
@@ -16,7 +16,7 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-black uppercase tracking-[0.22em] text-white">Site</h3>
           <ul className="mt-4 space-y-3 text-sm text-zinc-400">
-            {navItems.map((item) => (
+            {[...navItems, ...footerLinks].map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="transition hover:text-volt">{item.label}</Link>
               </li>
@@ -32,17 +32,8 @@ export function Footer() {
           </ul>
         </div>
       </Container>
-      <Container className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
-        <p>© {new Date().getFullYear()} Gym DTC. Built for disciplined training.</p>
-        <nav aria-label="Legal links">
-          <ul className="flex flex-wrap gap-x-5 gap-y-2">
-            {legalItems.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="transition hover:text-volt">{item.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+      <Container className="mt-10 border-t border-white/10 pt-6 text-xs text-zinc-500">
+        © {new Date().getFullYear()} Gym DTC. Built for disciplined training.
       </Container>
     </footer>
   );

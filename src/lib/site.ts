@@ -13,7 +13,7 @@ export const navItems = [
   { label: "Contact", href: "/contact" },
 ];
 
-export const legalItems = [
+export const footerLinks = [
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms of Use", href: "/terms-of-use" },
 ];
