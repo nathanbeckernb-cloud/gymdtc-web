@@ -12,3 +12,7 @@ export const navItems = [
   { label: "Features", href: "/features" },
   { label: "Contact", href: "/contact" },
 ];
+
+export const footerLinks = [
+  { label: "Privacy Policy", href: "/privacy-policy" },
+];
