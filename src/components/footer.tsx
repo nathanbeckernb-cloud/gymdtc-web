@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { navItems, site } from "@/lib/site";
+import { legalItems, navItems, site } from "@/lib/site";
 import { Container } from "./container";
 import { Logo } from "./logo";
 
@@ -32,8 +32,17 @@ export function Footer() {
           </ul>
         </div>
       </Container>
-      <Container className="mt-10 border-t border-white/10 pt-6 text-xs text-zinc-500">
-        © {new Date().getFullYear()} Gym DTC. Built for disciplined training.
+      <Container className="mt-10 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
+        <p>© {new Date().getFullYear()} Gym DTC. Built for disciplined training.</p>
+        <nav aria-label="Legal links">
+          <ul className="flex flex-wrap gap-x-5 gap-y-2">
+            {legalItems.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="transition hover:text-volt">{item.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </Container>
     </footer>
   );

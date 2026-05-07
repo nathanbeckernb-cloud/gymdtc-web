@@ -12,3 +12,7 @@ export const navItems = [
   { label: "Features", href: "/features" },
   { label: "Contact", href: "/contact" },
 ];
+
+export const legalItems = [
+  { label: "Terms of Use", href: "/terms-of-use" },
+];
