@@ -14,5 +14,6 @@ export const navItems = [
 ];
 
 export const footerLinks = [
-  { label: "Privacy Policy", href: "/privacy-policy" },
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms of Use", href: "/terms" },
 ];
