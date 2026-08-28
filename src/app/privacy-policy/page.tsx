@@ -14,6 +14,7 @@ const sections = [
     paragraphs: ["Depending on the features you use, DTC Fuel may collect or store:"],
     items: [
       "Account and contact information, including email address, display name, account identifier, and authentication records.",
+      "Parent or guardian consent information for minor team access, including parent or guardian name, optional email address or phone number, electronic-signature name, consent status, consent scope, and consent or revocation timestamps. A parent or guardian does not need a DTC Fuel account to use the secure consent website.",
       "Profile information, including birth date, calculated age, sex selection, height, current weight, goal weight, sport, position or role, season phase, workout frequency, goals, allergies, food preferences, and practice or competition schedule information.",
       "Nutrition and activity information, including calorie and macro targets, meal and snack logs, foods, serving amounts, hydration logs, weight history, plan completion, and related progress information.",
       "Food, package, Nutrition Facts, and ingredient-label images selected or captured for supported photo-review features. In the current build, these images stay in the app's local device storage and are not uploaded to DTC Fuel or Supabase.",
@@ -34,7 +35,7 @@ const sections = [
     title: "Local storage and Supabase",
     paragraphs: [
       "DTC Fuel uses device storage to keep session information, user-scoped app state, product cache entries, and local food or label photos needed by app features. Removing the app may remove local-only information that has not been synchronized.",
-      "DTC Fuel uses Supabase to provide account authentication and, when configured, to store account, profile, nutrition-goal, meal, hydration, weight, Team, guardian, and readiness-summary information. Supabase acts as a service provider that processes data to operate DTC Fuel. Current food-photo files and device-local photo paths are excluded from Supabase synchronization. Access controls, including Row Level Security, are intended to limit signed-in users and approved Team or guardian roles to the records they are permitted to use.",
+      "DTC Fuel uses Supabase to provide account authentication and to store account, profile, nutrition-goal, meal, hydration, weight, Team, guardian, parent-consent, wrestling-assessment, and readiness-summary information. Supabase acts as a service provider that processes data to operate DTC Fuel. Current food-photo files and device-local photo paths are excluded from Supabase synchronization. Access controls, including Row Level Security and narrow server functions, are intended to limit signed-in users and approved Team or guardian roles to the records they are permitted to use.",
     ],
   },
   {
@@ -46,7 +47,7 @@ const sections = [
   {
     title: "How we use information",
     paragraphs: [
-      "We use information to create and secure accounts; personalize nutrition guidance; display meal, hydration, weight, and progress history; support barcode and label review; restore user data; answer support requests; prevent abuse; and maintain, troubleshoot, and improve DTC Fuel.",
+      "We use information to create and secure accounts; personalize nutrition guidance; display meal, hydration, weight, and progress history; support barcode and label review; manage Team membership and parent or guardian consent; restore user data; answer support requests; prevent abuse; and maintain, troubleshoot, and improve DTC Fuel.",
       "DTC Fuel provides educational wellness and sports-nutrition information, not medical diagnosis or treatment. Nutrition and weight estimates should be reviewed and may not be appropriate for every person.",
     ],
   },
@@ -55,13 +56,14 @@ const sections = [
     paragraphs: [
       "We do not sell personal data. We do not use personal data for cross-app advertising or tracking.",
       "We may share information with service providers only as needed to operate DTC Fuel, such as Supabase for authentication and data hosting. We may disclose information when required by law, to protect users or the service, or as part of a business transaction subject to appropriate safeguards.",
-      "Team and guardian features use targeted, expiring invitations and server-enforced access rules. Athletes and authorized guardians can review and revoke access and choose which derived readiness signals a team may see. Minor team access requires guardian and team-admin approval before membership begins. Coaches and team administrators receive only enabled readiness/status summaries, not full food diaries, exact calories, exact daily weights, photos, private notes, or medical information. Team administrators do not bypass athlete privacy choices.",
+      "Team access is approval-based. For a minor athlete, DTC Fuel can create a six-character parent-consent code. The parent or guardian visits gymdtc.com/consent, enters that code, sees the athlete, team, and requested data scope, enters their own name and either an email address or phone number, and chooses whether to sign. The parent does not need a DTC Fuel account or app. Codes expire and code lookups are rate-limited.",
+      "A signed wrestling parent consent may authorize the selected team to view only the enabled wrestling scope, currently wrestling weight check-ins and history, entered official-assessment fields, and weight-class planning status. Meals, food photos, exact calories, private notes, medical information, unrelated account information, and any scope not expressly granted remain excluded. Team administrators do not bypass the consent boundary, and coach access requires the athlete to remain an active member of that team.",
     ],
   },
   {
     title: "Retention",
     paragraphs: [
-      "We retain account and synchronized app information while an account is active and as reasonably needed to provide DTC Fuel, comply with legal obligations, resolve disputes, prevent fraud, and enforce agreements. Local cache files remain on the device until removed by the app, operating system, user, or app uninstall. Backup copies may remain for a limited period before routine deletion. We will not retain personal data longer than reasonably necessary for these purposes.",
+      "We retain account and synchronized app information while an account is active and as reasonably needed to provide DTC Fuel, comply with legal obligations, resolve disputes, prevent fraud, and enforce agreements. Parent-consent records may be retained as reasonably necessary to document consent history, revocation, and the scope that was authorized. Local cache files remain on the device until removed by the app, operating system, user, or app uninstall. Backup copies may remain for a limited period before routine deletion. We will not retain personal data longer than reasonably necessary for these purposes.",
     ],
   },
   {
@@ -70,19 +72,20 @@ const sections = [
       "Users can start account deletion from More > Account & Privacy > Delete Account and complete both confirmations. If you cannot access the app, request deletion at hello@gymdtc.com from the account email with subject \"DTC Fuel account deletion.\" Never send a password or login token. You can also review the public deletion instructions at https://www.gymdtc.com/account-deletion.",
       "Deletion requests require identity verification. When deletion is completed, we delete or de-identify the account and associated DTC Fuel data unless limited retention is required by law, security, fraud prevention, or dispute resolution. Deleting an account does not necessarily remove information that was lawfully de-identified so it can no longer identify a user.",
       "You can deny camera access and continue with manual food entry. Account & Privacy also offers Clear This Device, which removes the current account's cache and owned local food photos from that device without deleting server data or another account's cache. You may also request access, correction, or deletion help by contacting us.",
+      "Parents or guardians can decline a requested wrestling consent before signing. A signed consent can later be revoked through the consent flow. Revocation disables consent-backed wrestling coach access and removes consent-backed team access when no other valid approval basis remains.",
     ],
   },
   {
     title: "Teens and minors",
     paragraphs: [
-      "DTC Fuel may be used by teen athletes. A parent or guardian should review use of the app, especially nutrition targets and weight goals. We do not knowingly collect personal information from a child below the age at which parental consent is legally required without appropriate authorization. If you believe a child provided information without required permission, contact us so we can review and delete it.",
+      "DTC Fuel may be used by teen athletes. A parent or guardian should review use of the app, especially nutrition targets and wrestling weight-management features. We do not knowingly collect personal information from a child below the age at which parental consent is legally required without appropriate authorization. If you believe a child provided information without required permission, contact us so we can review and delete it.",
       "DTC Fuel does not recommend aggressive weight cuts for minors and should not replace advice from a qualified medical professional, registered dietitian, parent or guardian, or responsible coach.",
     ],
   },
   {
     title: "Security",
     paragraphs: [
-      "We use reasonable administrative, technical, and organizational safeguards intended to protect personal data. No system is completely secure, and we cannot guarantee absolute security. Keep your password private and contact us if you believe your account has been compromised.",
+      "We use reasonable administrative, technical, and organizational safeguards intended to protect personal data. Parent-consent codes are generated for one athlete and team request, stored by DTC Fuel only as hashes, expire after a limited period, and are protected by rate limiting. Codes should be shared only with the intended parent or guardian. No system is completely secure, and we cannot guarantee absolute security. Keep your password private and contact us if you believe your account has been compromised.",
     ],
   },
   {
@@ -104,7 +107,7 @@ export default function PrivacyPolicyPage() {
             description="This policy explains the information DTC Fuel handles, why it is used, where it is processed, and the choices available to users and parents or guardians."
           />
           <p className="mt-8 inline-flex rounded-full border border-white/10 bg-black/30 px-4 py-2 text-sm font-bold text-zinc-300">
-            Effective date: August 23, 2026
+            Effective date: August 28, 2026
           </p>
         </Container>
       </section>
